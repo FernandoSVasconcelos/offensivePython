@@ -1,0 +1,19 @@
+#!/bin/bash
+echo "Este script fara pings continuos ao alvo. Executar?[s/n]"
+read RESPOSTA
+if [ $RESPOSTA != "s" ] 
+then
+	echo "Código interrompido."
+	exit
+else
+	echo "Qual endereco pingar?"
+	read ENDERECO
+	echo "Quantos pings?"
+	read VALOR
+	echo "Iniciando ping..."
+	sleep 1
+	for n in $(seq $VALOR)
+	do
+		ping -c 1 $ENDERECO
+	done
+fi
