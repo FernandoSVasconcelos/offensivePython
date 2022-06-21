@@ -24,6 +24,7 @@ def soup_crawler():
     session.proxies["http"] = "socks5h://localhost:9050"
     session.proxies["https"] = "socks5h://localhost:9050"
 
+    # Choose a online link
     url = "http://darkzzx4avcsuofgfez5zq75cqc4mprjvfqywo45dfcaxrwqg6qrlfid.onion/"
     response = session.get(url)
 
