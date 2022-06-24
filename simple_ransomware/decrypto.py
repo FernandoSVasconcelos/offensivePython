@@ -2,10 +2,6 @@ import os
 from pathlib import Path
 from cryptography.fernet import Fernet
 
-dir = Path(r'C:\Users\Fernando\Documents\igti\pwned')
-ext = ('.txt', '.pdf')
-key_path = 'key.txt'
-
 def decrypto():
     key_file = open(key_path, 'rb')
     key = key_file.read()
@@ -30,4 +26,9 @@ def decrypto():
     except Exception as exception:
         print(f"Chave errada ou arquivo não criptografado!")
 
-decrypto()
+if __name__ == '__main__':
+    dir = Path(r'C:\Users\Fernando\Documents\offensivePython\simple_ransomware\pwned')
+    ext = ('.txt', '.pdf')
+    key_path = Path(r'C:\Users\Fernando\Documents\offensivePython\simple_ransomware')
+    key_path = f'{key_path}/key.txt'
+    decrypto()
